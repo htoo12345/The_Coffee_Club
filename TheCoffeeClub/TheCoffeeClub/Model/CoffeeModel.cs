@@ -12,16 +12,6 @@ namespace TheCoffeeClub.Model
         public string Coffee { get; set; }
         public int Price { get; set; }
 
-        public void GetInformation()
-        {
-            Console.Write("Enter id : ");
-            No = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter name : ");
-            Coffee = Console.ReadLine();
-
-            Console.Write("Enter Price : ");
-            Price = Convert.ToInt32(Console.ReadLine());
-        }
+        
     }
 }

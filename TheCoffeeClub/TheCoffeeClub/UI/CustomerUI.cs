@@ -75,7 +75,7 @@ namespace TheCoffeeClub.UI
 
             
             // calculate total
-            double total = (100 / tax) * cost;
+            double total = (cost*tax)/100;
 
             // show price to customer
             txtTax.Text = tax.ToString();

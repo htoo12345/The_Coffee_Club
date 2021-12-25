@@ -29,28 +29,32 @@ namespace TheCoffeeClub.UI
             string userName=txtUserName.Text;
             string password=txtPassword.Text;
 
-            
-            // Check username and password 
-            if(userName.Equals("CoffeeMaker") && password.Equals("123"))
+            OwnerServer ownerServer = new OwnerServer();
+            OwnerModel ownerModel = ownerServer.GetOwnerListByUserNameAndPassword(userName, password);
+
+            if(ownerModel != null)
             {
                 this.Hide();
+                OwnerDashBoardUI ownerDashBoardUI = new OwnerDashBoardUI();
+                ownerDashBoardUI.Show();
 
-                // User and password are correct go to OwnerDashBoard 
-                OwnerItemControlUI ownerItemControl=new OwnerItemControlUI();
-                ownerItemControl.Show();
-            }
+            } // end of ownerModel (if)
+
             else
             {
-                MessageBox.Show("User name and password are incorrect", "Error occur!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Invalid owner!","Error occur",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-        }
+
+        } // end of btnLogin_Click
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            txtUserName.Text = txtPassword.Text = String.Empty;
+
             this.Hide();
             TheCoffeeClubUI theCoffeeClubUI = new TheCoffeeClubUI();
             theCoffeeClubUI.Show();
-        }
+        } // end of btnCancel
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {

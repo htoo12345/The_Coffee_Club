@@ -26,7 +26,7 @@ namespace TheCoffeeClub.DAO
 
             if (sqlConnection != null)
             {
-                string query = "select * from Owner Order by No";
+                string query = "select * from Product Order by No";
 
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -67,7 +67,7 @@ namespace TheCoffeeClub.DAO
 
                 if (sqlConnection != null)
                 {
-                    string query = $"delete from Owner where No={coffeeModel.No}";
+                    string query = $"delete from Product where No={coffeeModel.No}";
 
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                     int result = sqlCommand.ExecuteNonQuery();
@@ -101,7 +101,7 @@ namespace TheCoffeeClub.DAO
 
                 if (sqlConnection != null)
                 {
-                    string query = $"update Owner set Coffee = '{coffeeModel.Coffee}' , Price = {coffeeModel.Price} where No= {coffeeModel.No} ";
+                    string query = $"update Product set Coffee = '{coffeeModel.Coffee}' , Price = {coffeeModel.Price} where No= {coffeeModel.No} ";
 
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                     int result = sqlCommand.ExecuteNonQuery();
@@ -138,7 +138,7 @@ namespace TheCoffeeClub.DAO
 
                 if (sqlConnection != null)
                 {
-                    string query = $"insert into Owner values ({coffeeModel.No},'{coffeeModel.Coffee}',{coffeeModel.Price})";
+                    string query = $"insert into Product values ({coffeeModel.No},'{coffeeModel.Coffee}',{coffeeModel.Price})";
 
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                     int result = sqlCommand.ExecuteNonQuery();

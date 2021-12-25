@@ -30,7 +30,7 @@ namespace TheCoffeeClub.UI
 
         private void OwnerItemControlUI_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
 
         ///---------------------------------------------------------------------------------------
@@ -142,9 +142,6 @@ namespace TheCoffeeClub.UI
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            OwnerLoginUI loginUI = new OwnerLoginUI();
-            loginUI.Show();
         }
 
         ///---------------------------------------------------------------------------------------
