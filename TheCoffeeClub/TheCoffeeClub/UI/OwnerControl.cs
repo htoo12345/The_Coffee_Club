@@ -140,19 +140,38 @@ namespace TheCoffeeClub.UI
             } // end of if
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        { //btn Add new owner Registration
-            OwnerServer ownerServer = new OwnerServer();
-            gvOwnerListControl.DataSource = ownerServer.GetOwnerList();
+        //-------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------
 
-            OwnerRegistrationUI ownerRegistrationUI = new OwnerRegistrationUI();    
-            ownerRegistrationUI.Show();
-
-            Resert();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            OwnerServer ownerServer = new OwnerServer();
+
+            try
+            {
+                string password = txtPassword.Text;
+                string comfirmPassword = txtPassword.Text;
+
+                if (password.Equals(comfirmPassword))
+                {
+                    OwnerModel ownerModel = new OwnerModel();
+
+                    ownerModel.Id = Convert.ToInt32(txtId.Text);
+                    ownerModel.UserName = txtUserName.Text;
+                    ownerModel.Email = txtEmail.Text;
+                    ownerModel.Password = txtPassword.Text;
+                    ownerModel.ComfirmPassword = txtComfirmPassword.Text;
+
+                    ownerServer.OwnerAdd(ownerModel);
+                    MessageBox.Show($"\nCommands completed successfully. \nCompletion time: {DateTime.Now}\n", "Success", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Update failed {error.Message}", "Error occur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             NewRefresh();
         }
     } // end of OwnerControlUI class

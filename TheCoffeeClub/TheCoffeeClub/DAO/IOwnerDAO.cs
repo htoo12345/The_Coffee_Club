@@ -18,5 +18,7 @@ namespace TheCoffeeClub.DAO
         void OwnerUpdate(OwnerModel owner);
 
         void OwnerDelete(OwnerModel owner);
+
+        void OwnerAdd(OwnerModel owner);
     }
 }

@@ -36,8 +36,8 @@ namespace TheCoffeeClub.DAO
                         Id = Convert.ToInt32(sqlDataReader["Id"]),
                         UserName = sqlDataReader["UserName"].ToString(),
                         Email = sqlDataReader["Email"].ToString(),
-                        Password = sqlDataReader["Password"].ToString(),
-                        ComfirmPassword = sqlDataReader["ComfirmPassword"].ToString() 
+                        // Password = sqlDataReader["Password"].ToString(),
+                        // ComfirmPassword = sqlDataReader["ComfirmPassword"].ToString() 
                     }; 
 
                     ownerListData.Add(dbModel); 
@@ -93,6 +93,40 @@ namespace TheCoffeeClub.DAO
             return dbModel;
 
         } // end of GetOwnerListByUserNameAndPassword
+
+        //-------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------
+
+        public void OwnerAdd(OwnerModel owner)
+        {
+            try
+            {
+                string connectionString = @"Data Source=localhost;Initial Catalog=CoffeeClubMgtDB;User Id=sa;Password=azono";
+
+                SqlConnection sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
+
+                if (sqlConnection != null)
+                {
+                    string query = $"insert into Owner values ({owner.Id},'{owner.UserName}','{owner.Email}','{owner.Password}','{owner.ComfirmPassword}')";
+
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                    int result = sqlCommand.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        //MessageBox.Show($"\nCommands completed successfully. \nCompletion time: {DateTime.Now}\n");
+                    }
+
+                    sqlConnection.Close();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
 
         //-------------------------------------------------------------------------------------------------
         //-------------------------------------------------------------------------------------------------

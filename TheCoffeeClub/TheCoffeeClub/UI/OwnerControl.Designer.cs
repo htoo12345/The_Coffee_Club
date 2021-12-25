@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OwnerControl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.Edit = new System.Windows.Forms.GroupBox();
             this.txtComfirmPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,8 +46,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.gvOwnerListControl = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Edit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvOwnerListControl)).BeginInit();
@@ -55,8 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.btnRefresh);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.Edit);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnDelete);
@@ -65,8 +63,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 320);
+            this.panel1.Size = new System.Drawing.Size(908, 283);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(575, 151);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 49);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Edit
             // 
@@ -208,32 +216,11 @@
             this.gvOwnerListControl.Size = new System.Drawing.Size(557, 255);
             this.gvOwnerListControl.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 273);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(885, 37);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add New Owner Registration";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(575, 151);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 49);
-            this.btnRefresh.TabIndex = 6;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // OwnerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 320);
+            this.ClientSize = new System.Drawing.Size(908, 283);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OwnerControl";
@@ -265,7 +252,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

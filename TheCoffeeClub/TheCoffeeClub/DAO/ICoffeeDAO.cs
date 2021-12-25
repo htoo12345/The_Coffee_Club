@@ -17,5 +17,7 @@ namespace TheCoffeeClub.DAO
         void UpdateCoffee(CoffeeModel coffeeModel); 
 
         void InsertCoffee(CoffeeModel coffeeModel);
+
+        
     }
 }
