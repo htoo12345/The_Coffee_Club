@@ -38,6 +38,7 @@ namespace TheCoffeeClub.DAO
                         No = Convert.ToInt32(sqlDataReader["No"]),
                         Coffee = sqlDataReader["Coffee"].ToString(),
                         Price = Convert.ToInt32(sqlDataReader["Price"]),
+                        Qty = Convert.ToInt32(sqlDataReader["Qty"])
                     };
 
                     coffeeListModels.Add(dbCoffeeModel);
@@ -101,7 +102,7 @@ namespace TheCoffeeClub.DAO
 
                 if (sqlConnection != null)
                 {
-                    string query = $"update Product set Coffee = '{coffeeModel.Coffee}' , Price = {coffeeModel.Price} where No= {coffeeModel.No} ";
+                    string query = $"update Product set Coffee = '{coffeeModel.Coffee}' , Price = {coffeeModel.Price} , Qty = {coffeeModel.Qty} where No= {coffeeModel.No} ";
 
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                     int result = sqlCommand.ExecuteNonQuery();
@@ -138,7 +139,7 @@ namespace TheCoffeeClub.DAO
 
                 if (sqlConnection != null)
                 {
-                    string query = $"insert into Product values ({coffeeModel.No},'{coffeeModel.Coffee}',{coffeeModel.Price})";
+                    string query = $"insert into Product values ({coffeeModel.No},'{coffeeModel.Coffee}',{coffeeModel.Price},{coffeeModel.Qty})";
 
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                     int result = sqlCommand.ExecuteNonQuery();

@@ -42,6 +42,7 @@ namespace TheCoffeeClub.UI
             txtCoffee.Text = "";
             txtPrice.Text = "";
             txtNo.Text = "";
+            txtQty.Text = "1";
         }
 
         ///---------------------------------------------------------------------------------------
@@ -59,6 +60,7 @@ namespace TheCoffeeClub.UI
                 model.No = Convert.ToInt32(txtNo.Text);
                 model.Coffee = txtCoffee.Text;
                 model.Price = Convert.ToInt32(txtPrice.Text);
+                model.Qty = Convert.ToInt32(txtQty.Text);
 
                 coffeeServer.UpdateCoffee(model);
                 MessageBox.Show($"\nCommands completed successfully. \nCompletion time: {DateTime.Now}\n", "Update successed",MessageBoxButtons.OK);
@@ -120,6 +122,7 @@ namespace TheCoffeeClub.UI
                 model.No = Convert.ToInt32(txtNo.Text);
                 model.Coffee = txtCoffee.Text;
                 model.Price = Convert.ToInt32(txtPrice.Text);
+                model.Qty = Convert.ToInt32(txtQty.Text);
 
                 coffeeServer.InsertCoffee(model);
 

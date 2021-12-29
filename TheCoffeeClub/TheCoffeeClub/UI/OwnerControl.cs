@@ -41,6 +41,9 @@ namespace TheCoffeeClub.UI
             OwnerServer ownerServer = new OwnerServer();
 
             gvOwnerListControl.DataSource = ownerServer.GetOwnerList();
+
+            //gvOwnerListControl.Columns[3].Visible = false;
+            //gvOwnerListControl.Columns[4].Visible = false;
         }
 
         //-------------------------------------------------------------------------------------------------

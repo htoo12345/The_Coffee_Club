@@ -12,28 +12,42 @@ namespace TheCoffeeClub.UI
 {
     public partial class TheCoffeeClubUI : Form
     {
+        
+        //=================================================================================================
+
         public TheCoffeeClubUI()
         {
             InitializeComponent();
         }
 
-        private void btnOwner_Click(object sender, EventArgs e)
+        //=================================================================================================
+
+        private void TheCoffeeClubUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //=================================================================================================
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuUI menuUI = new MenuUI();
+            menuUI.Show();
+        }
+
+        //=================================================================================================
+
+        private void btnNewOwner_Click(object sender, EventArgs e)
         {
             this.Hide();
             OwnerLoginUI ownerLoginUI = new OwnerLoginUI();
             ownerLoginUI.Show();
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CustomerUI customerUI=new CustomerUI();
-            customerUI.Show();
-        }
+        //=================================================================================================
 
-        private void TheCoffeeClubUI_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-    }
-}
+        //private void 
+
+    } // end of class TheCoffeeClubUI 
+} // end of namespace

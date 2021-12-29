@@ -11,7 +11,7 @@ namespace TheCoffeeClub.Model
         public int No { get; set; }
         public string Coffee { get; set; }
         public int Price { get; set; }
+        public int Qty { get; set; }
 
-        
     }
 }

@@ -9,9 +9,9 @@ C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\The
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.csproj.CoreCompileInputs.cache
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.exe
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.pdb
-C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.CustomerUI.resources
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.OwnerLoginUI.resources
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.OwnerItemControlUI.resources
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.OwnerDashBoardUI.resources
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.OwnerRegistrationUI.resources
 C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.OwnerControl.resources
+C:\Users\htooa\Desktop\The coffee club\TheCoffeeClub\TheCoffeeClub\obj\Debug\TheCoffeeClub.UI.MenuUI.resources

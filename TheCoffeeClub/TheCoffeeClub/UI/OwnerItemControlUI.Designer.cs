@@ -42,6 +42,8 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCoffee = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtQty = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvCoffeeList)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,6 +115,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.txtQty);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -173,6 +177,22 @@
             this.txtCoffee.Size = new System.Drawing.Size(132, 20);
             this.txtCoffee.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Qty";
+            // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(124, 138);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(100, 20);
+            this.txtQty.TabIndex = 11;
+            // 
             // OwnerItemControlUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,5 +228,7 @@
         private System.Windows.Forms.TextBox txtNo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.Label label4;
     }
 }

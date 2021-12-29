@@ -36,8 +36,8 @@ namespace TheCoffeeClub.DAO
                         Id = Convert.ToInt32(sqlDataReader["Id"]),
                         UserName = sqlDataReader["UserName"].ToString(),
                         Email = sqlDataReader["Email"].ToString(),
-                        // Password = sqlDataReader["Password"].ToString(),
-                        // ComfirmPassword = sqlDataReader["ComfirmPassword"].ToString() 
+                        Password = "***********",
+                        ComfirmPassword = "***************" 
                     }; 
 
                     ownerListData.Add(dbModel); 
