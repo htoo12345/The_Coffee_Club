@@ -65,14 +65,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(730, 472);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // flwCheckBox
             // 
-            this.flwCheckBox.BackColor = System.Drawing.Color.Cyan;
+            this.flwCheckBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.flwCheckBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flwCheckBox.BackgroundImage")));
             this.flwCheckBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flwCheckBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flwCheckBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flwCheckBox.Location = new System.Drawing.Point(0, 0);
             this.flwCheckBox.Name = "flwCheckBox";
             this.flwCheckBox.Size = new System.Drawing.Size(265, 472);
@@ -80,12 +79,14 @@
             // 
             // gvOrder
             // 
+            this.gvOrder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
             this.Coffee,
             this.Price,
             this.Qty});
+            this.gvOrder.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.gvOrder.Location = new System.Drawing.Point(271, 12);
             this.gvOrder.Name = "gvOrder";
             this.gvOrder.Size = new System.Drawing.Size(444, 202);
@@ -123,6 +124,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtTotal);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Location = new System.Drawing.Point(271, 220);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(291, 165);
@@ -181,12 +183,13 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Orange;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCancel.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(271, 391);
+            this.btnCancel.Location = new System.Drawing.Point(0, 401);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(444, 71);
+            this.btnCancel.Size = new System.Drawing.Size(730, 71);
             this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "                                          Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -194,9 +197,9 @@
             // 
             this.btnTotal.BackColor = System.Drawing.Color.Orange;
             this.btnTotal.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnTotal.Location = new System.Drawing.Point(613, 220);
+            this.btnTotal.Location = new System.Drawing.Point(589, 220);
             this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(102, 71);
+            this.btnTotal.Size = new System.Drawing.Size(126, 71);
             this.btnTotal.TabIndex = 2;
             this.btnTotal.Text = "Total";
             this.btnTotal.UseVisualStyleBackColor = false;
@@ -206,9 +209,9 @@
             // 
             this.btnResert.BackColor = System.Drawing.Color.Orange;
             this.btnResert.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnResert.Location = new System.Drawing.Point(613, 313);
+            this.btnResert.Location = new System.Drawing.Point(589, 313);
             this.btnResert.Name = "btnResert";
-            this.btnResert.Size = new System.Drawing.Size(102, 71);
+            this.btnResert.Size = new System.Drawing.Size(126, 71);
             this.btnResert.TabIndex = 1;
             this.btnResert.Text = "Resert";
             this.btnResert.UseVisualStyleBackColor = false;
@@ -220,8 +223,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 472);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuUI";
             this.Text = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuUI_FormClosing);

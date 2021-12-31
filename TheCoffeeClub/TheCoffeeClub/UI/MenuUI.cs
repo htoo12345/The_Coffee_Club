@@ -15,14 +15,9 @@ namespace TheCoffeeClub.UI
     public partial class MenuUI : Form
     {
 
-        List<CoffeeModel> coffeeModels;
-
         public MenuUI()
         {
-
             InitializeComponent();
-
-            coffeeModels = new List<CoffeeModel>();
         }
 
         //-----------------------------------------------------------------------------------
@@ -84,9 +79,7 @@ namespace TheCoffeeClub.UI
 
             //Check box
             CoffeeServer coffeeServer = new CoffeeServer();
-            
-
-            //
+           
             List<CoffeeModel> coffeeModels = coffeeServer.GetCoffeeList();
 
             foreach (var item in coffeeModels)
@@ -120,48 +113,22 @@ namespace TheCoffeeClub.UI
             else
             {
                 DataGridViewRow viewRow=new DataGridViewRow();
+
                 viewRow.CreateCells(gvOrder);
+
                 viewRow.Cells[0].Value = n;
                 viewRow.Cells[1].Value = chk.Text;
                 viewRow.Cells[2].Value = Convert.ToInt32(chk.Name);
                 viewRow.Cells[3].Value = Convert.ToInt32(quantity);
+
                 gvOrder.Rows.Add(viewRow);
+
                 n++;
 
                 AddCost();
-            }
-
-           /* if (chk.Checked==true)
-            {
-                   CoffeeModel coffeeModel = new CoffeeModel();
-                
-                   coffeeModel.Coffee = (chk.Text).ToString();
-                   coffeeModel.Price = Convert.ToInt32(chk.Name);
-                   coffeeModel.Qty = 1;
-
-                   coffeeModels.Add(coffeeModel);
-
-                gvOrder.DataSource = coffeeModels;
-     
-            } */
-
-            /*
-             foreach (DataGridViewRow row in this.gvOrder.Rows)
-                {
-                    row.Cells[0].Value = (chk.Text).ToString();
-                    row.Cells[1].Value = (chk.Name).ToString();
-                    row.Cells[2].Value = "1";
-
-                } // end of foreach
-             */
-
-            
+            } 
 
         } // end of CheckBox
-
-        //-----------------------------------------------------------------------------------
-
-        
 
         //-----------------------------------------------------------------------------------
 
@@ -173,8 +140,6 @@ namespace TheCoffeeClub.UI
             gvOrder.Rows.Clear();
             gvOrder.Refresh();
 
-           
-
         } // end of Resert button
 
         //-----------------------------------------------------------------------------------
@@ -184,25 +149,6 @@ namespace TheCoffeeClub.UI
             AddCost();
 
         } // end of Total button
-
-        //-----------------------------------------------------------------------------------
-
-        private void btn1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //-----------------------------------------------------------------------------------
-
-        private void Number(object sender, EventArgs e)
-        {
-
-        } // end of Number
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         //-----------------------------------------------------------------------------------
 

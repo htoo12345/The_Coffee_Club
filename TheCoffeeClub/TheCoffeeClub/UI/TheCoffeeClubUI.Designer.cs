@@ -69,6 +69,7 @@
             // 
             // btnNewOwner
             // 
+            this.btnNewOwner.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnNewOwner.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNewOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -77,7 +78,7 @@
             this.btnNewOwner.Location = new System.Drawing.Point(0, 79);
             this.btnNewOwner.Name = "btnNewOwner";
             this.btnNewOwner.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnNewOwner.Size = new System.Drawing.Size(309, 79);
+            this.btnNewOwner.Size = new System.Drawing.Size(309, 87);
             this.btnNewOwner.TabIndex = 2;
             this.btnNewOwner.Text = "                OWNER";
             this.btnNewOwner.UseVisualStyleBackColor = true;
@@ -106,7 +107,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 75);
+            this.panel2.Size = new System.Drawing.Size(309, 76);
             this.panel2.TabIndex = 3;
             // 
             // label1
