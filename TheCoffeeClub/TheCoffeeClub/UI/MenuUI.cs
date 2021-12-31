@@ -14,11 +14,15 @@ namespace TheCoffeeClub.UI
 {
     public partial class MenuUI : Form
     {
-        
+
+        List<CoffeeModel> coffeeModels;
 
         public MenuUI()
         {
+
             InitializeComponent();
+
+            coffeeModels = new List<CoffeeModel>();
         }
 
         //-----------------------------------------------------------------------------------
@@ -29,7 +33,7 @@ namespace TheCoffeeClub.UI
 
             for(int i = 0; i < gvOrder.Rows.Count; i++)
             {
-                sum += (Convert.ToDouble(gvOrder.Rows[i].Cells[1].Value) * Convert.ToDouble(gvOrder.Rows[i].Cells[2].Value) );
+                sum += (Convert.ToDouble(gvOrder.Rows[i].Cells[2].Value) * Convert.ToDouble(gvOrder.Rows[i].Cells[3].Value) );
 
             } // end of of loop
 
@@ -47,7 +51,7 @@ namespace TheCoffeeClub.UI
 
             double total = tax + CostOfPrice();
 
-            if (gvMenuList.Rows.Count>0)
+            if (gvOrder.Rows.Count>0)
             {
                 txtTotal.Text = (total).ToString();
                 txtSubTotal.Text = (CostOfPrice()).ToString();
@@ -80,14 +84,11 @@ namespace TheCoffeeClub.UI
 
             //Check box
             CoffeeServer coffeeServer = new CoffeeServer();
-            gvMenuList.DataSource = coffeeServer.GetCoffeeList();
+            
 
             //
             List<CoffeeModel> coffeeModels = coffeeServer.GetCoffeeList();
 
-           
-
-            //
             foreach (var item in coffeeModels)
             {
                 CheckBox chk = new CheckBox();
@@ -100,25 +101,49 @@ namespace TheCoffeeClub.UI
 
         } // end of MenuUI_Load
 
+        
+        int quantity = 1;
+        int n=0;
+
         private void CheckBox_Checked(object sender, EventArgs e)
         {
             CheckBox chk = (sender as CheckBox);
 
-            List<DataGridViewRow> rows = new List<DataGridViewRow>();
-
-
-            if(chk.Checked)
+            if(chk.Checked==false)
             {
-                foreach (DataGridViewRow row in this.gvOrder.Rows)
-                {
-                    row.Cells[0].Value = (chk.Text).ToString();
-                    row.Cells[1].Value = (chk.Name).ToString();
-                    row.Cells[2].Value = "1";
-
-                    rows.Add(row);
-                } // end of foreach
-     
+                MessageBox.Show("Please select");
             }
+            else if(quantity<=0)
+            {
+                MessageBox.Show("Please enter quantity");
+            }
+            else
+            {
+                DataGridViewRow viewRow=new DataGridViewRow();
+                viewRow.CreateCells(gvOrder);
+                viewRow.Cells[0].Value = n;
+                viewRow.Cells[1].Value = chk.Text;
+                viewRow.Cells[2].Value = Convert.ToInt32(chk.Name);
+                viewRow.Cells[3].Value = Convert.ToInt32(quantity);
+                gvOrder.Rows.Add(viewRow);
+                n++;
+
+                AddCost();
+            }
+
+           /* if (chk.Checked==true)
+            {
+                   CoffeeModel coffeeModel = new CoffeeModel();
+                
+                   coffeeModel.Coffee = (chk.Text).ToString();
+                   coffeeModel.Price = Convert.ToInt32(chk.Name);
+                   coffeeModel.Qty = 1;
+
+                   coffeeModels.Add(coffeeModel);
+
+                gvOrder.DataSource = coffeeModels;
+     
+            } */
 
             /*
              foreach (DataGridViewRow row in this.gvOrder.Rows)
@@ -130,7 +155,7 @@ namespace TheCoffeeClub.UI
                 } // end of foreach
              */
 
-            AddCost();
+            
 
         } // end of CheckBox
 
@@ -148,10 +173,7 @@ namespace TheCoffeeClub.UI
             gvOrder.Rows.Clear();
             gvOrder.Refresh();
 
-           /* foreach (DataGridViewRow row in this.gvMenuList.Rows)
-            {
-                
-            } */
+           
 
         } // end of Resert button
 
@@ -176,6 +198,11 @@ namespace TheCoffeeClub.UI
         {
 
         } // end of Number
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         //-----------------------------------------------------------------------------------
 

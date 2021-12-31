@@ -47,7 +47,13 @@ namespace TheCoffeeClub.UI
 
         //=================================================================================================
 
-        //private void 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //=================================================================================================
+
 
     } // end of class TheCoffeeClubUI 
 } // end of namespace

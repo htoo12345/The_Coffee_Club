@@ -36,6 +36,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +96,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnLogin);
@@ -108,12 +110,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(252, 249);
+            this.panel1.TabIndex = 7;
+            // 
             // OwnerLoginUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 250);
+            this.ClientSize = new System.Drawing.Size(252, 249);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OwnerLoginUI";
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
