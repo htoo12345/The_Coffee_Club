@@ -104,7 +104,7 @@ namespace TheCoffeeClub.UI
 
             if(chk.Checked==false)
             {
-                MessageBox.Show("Please select");
+                //MessageBox.Show("Please select");
             }
             else if(quantity<=0)
             {
@@ -134,12 +134,17 @@ namespace TheCoffeeClub.UI
 
         private void btnResert_Click(object sender, EventArgs e)
         {
-            txtTax.Text = "0";
+            txtTax.Text = "1";
             txtTotal.Text = String.Empty;
             txtSubTotal.Text = String.Empty;
             gvOrder.Rows.Clear();
             gvOrder.Refresh();
 
+            foreach(Control control in flwCheckBox.Controls)
+            {
+                if (control is CheckBox)
+                    ((CheckBox)(control)).Checked = false;
+            }
         } // end of Resert button
 
         //-----------------------------------------------------------------------------------
