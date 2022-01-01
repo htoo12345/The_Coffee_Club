@@ -95,6 +95,7 @@ namespace TheCoffeeClub.UI
         private void txtCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+
         }
     } // end of OwnerRegistrationUI
 

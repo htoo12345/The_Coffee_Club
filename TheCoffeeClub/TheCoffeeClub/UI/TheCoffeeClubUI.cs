@@ -41,6 +41,7 @@ namespace TheCoffeeClub.UI
         private void btnNewOwner_Click(object sender, EventArgs e)
         {
             this.Hide();
+
             OwnerLoginUI ownerLoginUI = new OwnerLoginUI();
             ownerLoginUI.Show();
         }
